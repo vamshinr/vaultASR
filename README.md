@@ -63,5 +63,14 @@ Use a larger model, enable noise suppression, and export to JSON:
 - `models/`: ONNX and GGML models
 - `scripts/`: Initialization and helper scripts
 
+## 🗺 Roadmap
+
+While the current version is optimized for macOS (Metal/CoreML), we have plans to expand to other hardware acceleration paths:
+
+- [ ] **Windows (DirectML)**: Support for Windows GPU acceleration via ONNX Runtime DirectML EP.
+- [ ] **NVIDIA (CUDA)**: Support for high-performance CUDA execution providers.
+- [ ] **AMD (ROCm/Vulcan)**: Broader cross-vendor GPU support.
+- [ ] **Mobile Port**: Exploring lightweight execution for iOS/Android.
+
 ---
 *VaultASR is optimized for speed and privacy. Transcribe hours of audio in minutes, entirely offline.*
