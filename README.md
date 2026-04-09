@@ -2,7 +2,7 @@
 
 VaultASR is a high-performance, private, and local speech-to-text pipeline designed for macOS. It combines the power of OpenAI's Whisper with advanced Voice Activity Detection (VAD) and Speaker Diarization, all running locally on your hardware with Metal GPU acceleration.
 
-## 🚀 Features
+## Features
 
 - **Local & Private**: No data ever leaves your machine. Perfect for sensitive meetings or personal notes.
 - **Advanced Pipeline**:
@@ -13,7 +13,7 @@ VaultASR is a high-performance, private, and local speech-to-text pipeline desig
 - **Hardware Accelerated**: Fully optimized for Apple Silicon (M1/M2/M3) using **Metal** and **CoreML**.
 - **Versatile Exports**: Support for Text, JSON, CSV, XLSX, SRT, Markdown, Docx, and SQLite.
 
-## 🛠 Prerequisites
+## Prerequisites
 
 Ensure you have the following installed (via Homebrew):
 
@@ -21,7 +21,7 @@ Ensure you have the following installed (via Homebrew):
 brew install cmake ffmpeg onnxruntime sqlite3
 ```
 
-## 🏗 Building
+## Building
 
 1. **Setup**: Run the setup script to initialize submodules and download required models.
    ```bash
@@ -35,7 +35,7 @@ brew install cmake ffmpeg onnxruntime sqlite3
    cmake --build build --parallel
    ```
 
-## 📖 Usage
+## Usage
 
 ### Quick Start
 Transcribe an audio file with default settings (`tiny.en` model):
@@ -56,16 +56,16 @@ Use a larger model, enable noise suppression, and export to JSON:
 - `--format <fmt>`: `text`, `json`, `xlsx`, `srt`, `markdown`, `docx`
 - `--no-gpu`: Force CPU-only mode
 
-## 📁 Project Structure
+## Project Structure
 
 - `src/v2/`: Core C++ pipeline logic
 - `external/`: Submodules (whisper.cpp, rnnoise, libxlsxwriter, miniz)
 - `models/`: ONNX and GGML models
 - `scripts/`: Initialization and helper scripts
 
-## 🗺 Roadmap
+## Roadmap
 
-While the current version is optimized for macOS (Metal/CoreML), we have plans to expand to other hardware acceleration paths:
+While the current version is optimized for macOS (Metal/CoreML), I plan to expand to other hardware acceleration paths:
 
 - [ ] **Windows (DirectML)**: Support for Windows GPU acceleration via ONNX Runtime DirectML EP.
 - [ ] **NVIDIA (CUDA)**: Support for high-performance CUDA execution providers.
