@@ -1,0 +1,67 @@
+# VaultASR v2
+
+VaultASR is a high-performance, private, and local speech-to-text pipeline designed for macOS. It combines the power of OpenAI's Whisper with advanced Voice Activity Detection (VAD) and Speaker Diarization, all running locally on your hardware with Metal GPU acceleration.
+
+## 🚀 Features
+
+- **Local & Private**: No data ever leaves your machine. Perfect for sensitive meetings or personal notes.
+- **Advanced Pipeline**:
+    - **Whisper (STT)**: Industry-leading transcription accuracy using `whisper.cpp`.
+    - **Silero VAD v5**: Precise voice activity detection to split audio into logical segments.
+    - **Speaker Diarization**: Multi-speaker identification using WeSpeaker-based embeddings.
+    - **RNNoise Denoising**: Intelligent noise suppression for high-quality results in noisy environments.
+- **Hardware Accelerated**: Fully optimized for Apple Silicon (M1/M2/M3) using **Metal** and **CoreML**.
+- **Versatile Exports**: Support for Text, JSON, CSV, XLSX, SRT, Markdown, Docx, and SQLite.
+
+## 🛠 Prerequisites
+
+Ensure you have the following installed (via Homebrew):
+
+```bash
+brew install cmake ffmpeg onnxruntime sqlite3
+```
+
+## 🏗 Building
+
+1. **Setup**: Run the setup script to initialize submodules and download required models.
+   ```bash
+   chmod +x scripts/setup.sh
+   ./scripts/setup.sh
+   ```
+
+2. **Build**:
+   ```bash
+   cmake -B build -DCMAKE_BUILD_TYPE=Release -DVAULTASR_USE_COREML=ON -DVAULTASR_USE_METAL=ON
+   cmake --build build --parallel
+   ```
+
+## 📖 Usage
+
+### Quick Start
+Transcribe an audio file with default settings (`tiny.en` model):
+```bash
+./build/vaultasr meeting.mp3
+```
+
+### High Quality with Denoising
+Use a larger model, enable noise suppression, and export to JSON:
+```bash
+./build/vaultasr --model base.en --denoise --format json --output report.json recording.wav
+```
+
+### Common Options
+- `--model <name>`: `tiny.en`, `base.en`, `small.en`, `medium.en`
+- `--no-diarize`: Disable speaker identification (faster)
+- `--denoise`: Clean up background noise
+- `--format <fmt>`: `text`, `json`, `xlsx`, `srt`, `markdown`, `docx`
+- `--no-gpu`: Force CPU-only mode
+
+## 📁 Project Structure
+
+- `src/v2/`: Core C++ pipeline logic
+- `external/`: Submodules (whisper.cpp, rnnoise, libxlsxwriter, miniz)
+- `models/`: ONNX and GGML models
+- `scripts/`: Initialization and helper scripts
+
+---
+*VaultASR is optimized for speed and privacy. Transcribe hours of audio in minutes, entirely offline.*

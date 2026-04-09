@@ -1,0 +1,19 @@
+[submodule "external/whisper.cpp"]
+	path = external/whisper.cpp
+	url = https://github.com/ggerganov/whisper.cpp.git
+	branch = master
+
+[submodule "external/rnnoise"]
+	path = external/rnnoise
+	url = https://github.com/xiph/rnnoise.git
+	branch = master
+
+[submodule "external/libxlsxwriter"]
+	path = external/libxlsxwriter
+	url = https://github.com/jmcnamara/libxlsxwriter.git
+	branch = main
+
+[submodule "external/miniz"]
+	path = external/miniz
+	url = https://github.com/richgel999/miniz.git
+	branch = master

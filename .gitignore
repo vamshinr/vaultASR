@@ -1,0 +1,34 @@
+# Build artifacts
+build/
+.cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large models
+models/
+external/*/models/
+
+# Large audio/video assets
+tests/*.mp3
+tests/*.m4a
+tests/*.wav
+tests/*.flac
+tests/*.mov
+tests/*.mp4
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
