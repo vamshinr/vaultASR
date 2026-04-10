@@ -74,7 +74,7 @@ While the current version is optimized for macOS (Metal/CoreML), I plan to expan
 
 ## 🤝 Contributing
 
-Contributions are welcome! If you have experience with any of the following, we'd love your help:
+Contributions are welcome! If you have experience with any of the following, 'd love your help:
 
 | Area | What's Needed |
 | :--- | :--- |
