@@ -72,5 +72,25 @@ While the current version is optimized for macOS (Metal/CoreML), I plan to expan
 - [ ] **AMD (ROCm/Vulcan)**: Broader cross-vendor GPU support.
 - [ ] **Mobile Port**: Exploring lightweight execution for iOS/Android.
 
+## 🤝 Contributing
+
+Contributions are welcome! If you have experience with any of the following, we'd love your help:
+
+| Area | What's Needed |
+| :--- | :--- |
+| 🪟 **Windows / DirectML** | Port the CMake build to Windows and wire up the ONNX Runtime DirectML execution provider |
+| ⚡ **NVIDIA / CUDA** | Add CUDA EP support for VAD and speaker embedder inference |
+| 🔴 **AMD / ROCm** | ROCm-based GPU acceleration on Linux/Windows |
+| 📱 **Mobile** | Lightweight iOS/Android inference using Core ML or NNAPI |
+| 🧪 **Testing** | Unit and integration tests for the pipeline stages |
+| 📖 **Docs** | Improve setup guides, add architecture diagrams, API docs |
+
+### How to contribute
+1. Fork the repo and create a feature branch
+2. Open an issue first to discuss major changes
+3. Submit a pull request with a clear description of what you changed and why
+
+All skill levels are welcome. Even fixing a typo or improving the README helps. 🙏
+
 ---
 *VaultASR is optimized for speed and privacy. Transcribe hours of audio in minutes, entirely offline.*
